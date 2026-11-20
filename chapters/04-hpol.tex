@@ -1,0 +1,39 @@
+\chapter{Hierarchical Graph Models: HPol}
+\label{ch:hpol}
+\draftnote{Target length: about 6 pages. Sources: \cite{alkhorem2026graph} (\PA) and
+\cite{steiner2018hardening} (\PAA).}
+
+\section{The Formalism}
+\label{sec:hpol-formalism}
+\draftnote{Policies as (type, subject, action, object) tuples over subject, action and
+object hierarchies; the policy set as a hierarchical graph in which policies are links
+\cite{alkhorem2026graph}.}
+
+\section{Hierarchy as Abstraction}
+\label{sec:hpol-hierarchy}
+\draftnote{What a policy asserted at a parent node means for its children, and why this is
+the approach's notion of abstraction.}
+
+\section{Conflict and Redundancy Detection}
+\label{sec:hpol-detection}
+\draftnote{The positive--positive, positive--negative, negative--positive and
+negative--negative cases, and the parent/child reconciliation that makes the partial
+cases hard. Note that only the Subject hierarchy is walked.}
+
+\section{How the Model Is Validated}
+\label{sec:hpol-validation}
+\draftnote{Exhaustive enumeration of model--request--response scenarios against a Python
+implementation. What that form of evidence does and does not establish.}
+
+\section{HPol as a Design-Transformation Tool}
+\label{sec:hpol-transformation}
+\draftnote{The Mutillidae case study \cite{steiner2018hardening}: a highest-privilege model,
+a transformation to a least-privilege model, and the corresponding source-code change. A
+refinement step performed informally on real code. Tracing one formalism from 2018 to 2026
+is itself a finding.}
+
+\section{Assessment}
+\label{sec:hpol-assessment}
+\draftnote{Position on the ladder: decidable and fast, but context-blind, solver-free, and
+silent on whether the model-to-implementation step preserves anything. Fill the HPol rows of
+\cref{tab:models,tab:evidence}.}

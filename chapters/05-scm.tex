@@ -1,0 +1,36 @@
+\chapter{Capability Models and Policy Translation: SCM}
+\label{ch:scm}
+\draftnote{Target length: about 6 pages. Source: \cite{basile2026scm} (\PB).}
+
+\section{The Configuration Problem}
+\label{sec:scm-problem}
+\draftnote{Heterogeneous security controls, vendor lock-in, and configuration as a
+historically manual and error-prone activity.}
+
+\section{The Information Model and the Data Model}
+\label{sec:scm-models}
+\draftnote{Conditions, actions and events; policies with condition evaluation, resolution
+strategies and default actions.}
+
+\section{The Three-Rung Ladder}
+\label{sec:scm-ladder}
+\draftnote{High-Level Policy $\to$ Medium-Level Policy $\to$ Low-Level Configuration, and
+what each rung is expressive enough to say. A TikZ figure of the ladder fits here.}
+
+\section{Model-Driven Translation}
+\label{sec:scm-translation}
+\draftnote{Where the descent rules actually live: the translation and policy-detail
+association classes, and the decorator pattern that keeps device specifics out of the
+translator code.}
+
+\section{How the Translation Is Validated}
+\label{sec:scm-validation}
+\draftnote{A refinement engine implemented as forward reasoning, expert manual validation
+of generated artifacts, and attack-simulation scripts. State plainly: no proof obligation is
+formulated for any rung of the ladder.}
+
+\section{Assessment}
+\label{sec:scm-assessment}
+\draftnote{The most explicit abstraction ladder of the four approaches, and the weakest
+guarantee that each step down it is sound. Fill the SCM rows of
+\cref{tab:models,tab:evidence}.}

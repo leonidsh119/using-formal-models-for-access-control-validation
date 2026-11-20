@@ -1,0 +1,56 @@
+\chapter{Solver-Based Verification: RBAC and ABAC in Kubernetes}
+\label{ch:k8s}
+\draftnote{Target length: about 6 pages. Source: \cite{sissodiya2025k8s} (\PC).}
+
+\section{The Authorization Path}
+\label{sec:k8s-path}
+\draftnote{RBAC, admission control and policy-as-code; why linters, unit tests and manual
+review systematically miss rule interactions.}
+
+\section{First-Order Encoding}
+\label{sec:k8s-encoding}
+\draftnote{RBAC and ABAC as logical predicates, deny-overrides semantics, and the combined
+decision function.}
+\begin{equation}
+  \Perms_{\RBAC}(u) \;=\; \bigcup_{(u,r)\in B} \{\, p \mid (r,p)\in A \,\}
+  \label{eq:k8s-rbac}
+\end{equation}
+
+\section{Invariants and the Soundness Check}
+\label{sec:k8s-soundness}
+\draftnote{Security invariants $\varphi$; soundness; the counterexample query discharged by
+an SMT solver \cite{demoura2008z3}, with the returned model read as a concrete
+misconfiguration.}
+\begin{align}
+  \text{soundness:}      &\quad \forall q \cdot \pi(q) = \Permit \Rightarrow \varphi(q)
+  \label{eq:k8s-sound}\\
+  \text{counterexample:} &\quad \exists q \cdot \pi(q) = \Permit \wedge \neg\varphi(q)
+  \label{eq:k8s-cex}
+\end{align}
+
+\section{The Translation $\tau : R \times P \to \pi$}
+\label{sec:k8s-tau}
+\draftnote{The RBAC-to-ABAC mapping, and the single unproven sentence that it ``maintains
+existing semantics.'' This is the most important half-sentence in the source material for
+this work; quote it exactly.}
+
+\section{Delta Analysis}
+\label{sec:k8s-delta}
+\begin{equation}
+  \Delta(u) \;=\; \Perms_{\RBAC}(u) \setminus \Perms_{\ABAC}(u)
+  \label{eq:k8s-delta}
+\end{equation}
+\draftnote{A relation between two models of different expressiveness, used as a diagnostic
+rather than as a correctness condition.}
+
+\section{Totality of the Verifier}
+\label{sec:k8s-total}
+\draftnote{$\Verify : \Pi \to \{\Valid, \Invalid, \Rejected, \Error\}$, conservative
+rejection of malformed policies, and the trust boundary this draws around the verifier
+itself: the formal high point among the four papers.}
+
+\section{Assessment}
+\label{sec:k8s-assessment}
+\draftnote{The approach verifies the concrete artifact against stated invariants; it does
+not verify the mapping that produced it. Fill the P3 rows of
+\cref{tab:models,tab:evidence}.}

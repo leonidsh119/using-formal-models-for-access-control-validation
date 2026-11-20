@@ -1,0 +1,26 @@
+\chapter{Cross-Cutting Analysis}
+\label{ch:cross}
+\draftnote{Target length: about 5 pages.}
+
+\section{The Consolidated Comparison}
+\label{sec:cross-tables}
+\input{tables/comparison-models}
+\input{tables/comparison-evidence}
+
+\section{Evidence Regimes Compared}
+\label{sec:cross-evidence}
+\draftnote{Exhaustive scenario enumeration, manual case-study inspection, expert review with
+attack simulation, and solver-based counterexample search. For each: the error class it
+catches, the error class it structurally cannot catch, and what it costs to run.}
+
+\section{Expressiveness, Decidability and Cost}
+\label{sec:cross-tension}
+\draftnote{The three-way tension. HPol is decidable and cheap but cannot express context;
+SCM is expressive but rests on human judgment; the SMT approach is expressive and
+checkable but costs encoding effort and solver time. The NP-hardness of redundancy
+elimination, cited in \cite{alkhorem2026graph}, bounds the cheap end.}
+
+\section{The Common Gap}
+\label{sec:cross-gap}
+\draftnote{Four descents across abstraction levels; four distinct evidence regimes; zero
+refinement proofs.}

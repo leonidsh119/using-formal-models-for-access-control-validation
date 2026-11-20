@@ -1,0 +1,53 @@
+\chapter{Background}
+\label{ch:background}
+\draftnote{Target length: about 7 pages.}
+
+\section{Access Control Models}
+\label{sec:bg-models}
+\draftnote{MAC, DAC, RBAC \cite{sandhu1996rbac}, ABAC, HBAC: only as much as is needed to
+read the four papers. Include the zero-trust framing that \cite{alkhorem2026graph} and
+\cite{sissodiya2025k8s} both adopt, and the principle of least privilege
+\cite{saltzer1975protection}.}
+
+\section{Positive and Negative Policies}
+\label{sec:bg-negative}
+\draftnote{Deny semantics, and why negative authorization is where conflict arises.
+Definitions taken from \cite{alkhorem2026graph} and reused throughout.}
+
+\section{Conflict and Redundancy}
+\label{sec:bg-conflict}
+\draftnote{Full vs.\ partial conflict; full vs.\ partial redundancy; the four-way
+positive/negative matrix set up in \cite{alkhorem2026graph}.}
+
+\section{What ``Formal'' Means in This Work}
+\label{sec:bg-formal}
+\draftnote{A measuring stick for the chapters that follow: a defined syntax, a defined
+semantics, and a mechanised proof are three different things. The four papers sit at
+three different points.}
+
+\section{Verification Machinery}
+\label{sec:bg-verification}
+\draftnote{First-order encoding of policies, security invariants, counterexample search
+with SAT/SMT \cite{demoura2008z3}, and how model checking differs. Enough to read the
+construction in \cite{sissodiya2025k8s} critically.}
+
+\section{Refinement: Two Meanings of One Word}
+\label{sec:bg-refinement}
+\draftnote{Pivotal section. Keep the two senses apart and declare the convention used in
+the rest of the work.}
+
+\paragraph{Policy refinement.}
+\draftnote{Translating abstract requirements into concrete device configuration: the sense
+used throughout \cite{basile2026scm}, inherited from intent-based and policy-based
+security.}
+
+\paragraph{Data (functional) refinement.}
+\draftnote{The Z/VDM/B relation between an abstract and a concrete specification, with a
+retrieve relation $\retr$ and simulation obligations \cite{woodcock1996usingz}. State the
+forward-simulation conditions precisely here; Chapter~\ref{ch:refinement} instantiates them.}
+
+\section{Specification Languages and Tools}
+\label{sec:bg-tools}
+\draftnote{Z \cite{spivey1992z,woodcock1996usingz}, Alloy \cite{jackson2012alloy}, SAT/SMT
+solvers \cite{demoura2008z3}, in brief. State plainly that none of the four papers uses Z
+or Alloy; this section exists so that Chapter~\ref{ch:refinement} is readable.}

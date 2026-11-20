@@ -1,0 +1,33 @@
+\chapter{The Missing Obligation: A Refinement Reading}
+\label{ch:refinement}
+\draftnote{Target length: about 5 pages. Personal contribution; get explicit mentor
+approval of the framing before drafting.}
+
+\section{The Problem Restated}
+\label{sec:ref-setting}
+\draftnote{An abstract policy model $A$, a concrete enforcement model $C$, and a retrieve
+relation $\retr$ between their state spaces: the standard setting
+\cite{woodcock1996usingz}, applied to access control.}
+
+\section{The Obligations That Would Have to Be Discharged}
+\label{sec:ref-obligations}
+\draftnote{Initialisation, applicability and correctness (simulation) conditions, written
+out concretely for $\tau$ \cite{sissodiya2025k8s} and for the HLP$\to$MLP$\to$LLC
+translator \cite{basile2026scm}, so it is clear exactly what is currently being assumed.}
+
+\section{$\Delta(u)$ as a Near-Miss}
+\label{sec:ref-delta}
+\draftnote{Why the privilege delta in Equation~\eqref{eq:k8s-delta} has the shape of a
+retrieve relation, what it lacks to become one, and what would follow if it had it.}
+
+\section{Why Modularity Matters Here}
+\label{sec:ref-modularity}
+\draftnote{Real policy models are large, and a monolithic obligation does not scale. The
+case for refining a small kernel of state-changing operations while leaving derived
+operations untouched \cite{faitelson2017decomposition,shepetovsky2026thesis}, advanced as a
+proposal, not as a result.}
+
+\section{Honest Limits}
+\label{sec:ref-limits}
+\draftnote{A refinement proof does not catch a wrong requirement; it catches an unfaithful
+implementation of a right one. What this line of work would and would not buy.}

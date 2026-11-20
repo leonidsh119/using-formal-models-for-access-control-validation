@@ -1,0 +1,97 @@
+% =====================================================================
+%  Seminar: Using Formal Models for Access Control Validation
+%  Open University of Israel, Department of Computer Science
+%  Compiler: pdfLaTeX (Overleaf default)  ·  Bibliography: BibTeX, abbrv
+% =====================================================================
+\documentclass[12pt,a4paper,oneside]{report}
+
+% ---------- Encoding & fonts ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ---------- Layout ----------
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{parskip}
+
+% ---------- Mathematics ----------
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{stmaryrd}   % \llbracket \rrbracket for semantic brackets
+
+% ---------- Tables, figures, listings ----------
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{pdflscape}  % landscape pages, if a table needs one
+\usepackage{caption}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,frame=single,columns=fullflexible}
+
+% ---------- Diagrams ----------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit}
+
+% ---------- Theorem-like environments ----------
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% ---------- Project macros ----------
+\input{macros}
+
+% ---------- Hyperlinks (load last) ----------
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+
+% ---------- Drafting notes: set to false to hide all \draftnote{} ----------
+\newif\ifdraft
+\drafttrue
+\newcommand{\draftnote}[1]{\ifdraft\par\noindent{\color{gray}\small\itshape [Draft: #1]}\par\fi}
+
+% ---------------------------------------------------------------------
+\begin{document}
+
+\input{titlepage}
+
+\pagenumbering{roman}
+\begin{abstract}
+\draftnote{Write last. ~200 words: problem, the four approaches surveyed, the common
+gap (no refinement proof across abstraction levels), and the refinement reading
+proposed in Chapter~8.}
+\end{abstract}
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+\clearpage
+\pagenumbering{arabic}
+
+\input{chapters/01-introduction}
+\input{chapters/02-background}
+\input{chapters/03-abstraction-ladder}
+\input{chapters/04-hpol}
+\input{chapters/05-scm}
+\input{chapters/06-kubernetes-smt}
+\input{chapters/07-cross-cutting}
+\input{chapters/08-refinement-obligation}
+\input{chapters/09-conclusion}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{abbrv}
+\bibliography{references}
+
+\end{document}
